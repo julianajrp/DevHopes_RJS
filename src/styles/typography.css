@@ -1,0 +1,83 @@
+h1, h2, h3, h4, h5 ,h6, p, span, li{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+}
+.FontOld{
+    font-family: 'Press Start 2P', cursive;
+}
+.LogoTitle{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    justify-items: center;
+    color: var(--letterColorNormal);
+    margin-top: 10px;
+}
+
+.Title1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+}
+.Title2{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+}
+@media (min-width:559px){
+    .Title2{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+    }
+}
+@media (min-width:1060px) {
+    .Title2{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+    }
+}
+.Title3{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+}
+.Headline{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}
+.HeadlineBold{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    
+}
+.HeadlineItalic{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+}
+.colorPink{
+    color: var(--colorPrimary);
+}
+.colorWhite{
+    color: var(--letterColorWhite);
+}
+.colorNormal{
+    color: var(--letterColorNormal);
+}
+.colorGrey{
+    color: var(--grey1);
+}
+
+.clicable{
+    cursor: pointer;
+}
+@media (min-width:619px){
+    .LogoTitle{
+    margin: 20px;
+  }
+
+}

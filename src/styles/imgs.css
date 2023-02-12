@@ -1,0 +1,42 @@
+.ImgLogo {
+ 
+    display: none;
+
+}
+.CatGif{
+    height: 100px;
+    width: 80px;
+
+}
+.PcGif{
+    height: 110px;
+    width: 90px;
+}
+@media (min-width:559px){
+    .ImgLogo{
+    display:flex;
+    width: 65px;
+    height: 55px;
+    margin-top: 5px;
+  }
+  .CatGif{
+    height: 200px;
+    width: 120px;
+
+}
+.PcGif{
+    height: 220px;
+    width: 140px;
+}
+}
+@media (min-width:1060px) {
+    .CatGif{
+        height: 380px;
+        width: 340px;
+        margin-top:50px;
+    }
+    .PcGif{
+        height: 550px;
+        width: 420px;
+    }
+}
