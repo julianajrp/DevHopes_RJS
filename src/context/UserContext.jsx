@@ -9,7 +9,9 @@ export const UserProvider = ({ children }) => {
   const [users, setUsers] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showHome, setShowHome] = useState(true);
-
+  const [showRepo, setShowRepo] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
+  const [userBox, setUserBox] = useState([]);
   const baseUrl = "http://127.0.0.1:8000/api/";
 
   useEffect(() => {
@@ -44,6 +46,12 @@ export const UserProvider = ({ children }) => {
         setLoading,
         showHome,
         setShowHome,
+        showInfo,
+        setShowInfo,
+        showRepo,
+        setShowRepo,
+        userBox,
+        setUserBox,
       }}
     >
       {children}

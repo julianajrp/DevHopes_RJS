@@ -59,19 +59,6 @@ h1, h2, h3, h4, h5 ,h6, p, span, li{
     font-weight: 400;
     font-size: 12px;
 }
-.colorPink{
-    color: var(--colorPrimary);
-}
-.colorWhite{
-    color: var(--letterColorWhite);
-}
-.colorNormal{
-    color: var(--letterColorNormal);
-}
-.colorGrey{
-    color: var(--grey1);
-}
-
 .clicable{
     cursor: pointer;
 }
@@ -80,4 +67,11 @@ h1, h2, h3, h4, h5 ,h6, p, span, li{
     margin: 20px;
   }
 
+}
+.Purple{
+    color: var(--purpleBright)
+}
+
+.Purple:hover{
+    color: var(--purpleBrightFocus)
 }

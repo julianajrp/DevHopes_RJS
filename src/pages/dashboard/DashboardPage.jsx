@@ -9,21 +9,34 @@ import {
   DivHome,
   DivAllHome,
 } from "../../components/StyledComponents/DivsComponents";
-
+import UserRepo from "../usersPage/userRepo/UserRepo";
+import UserDetail from "../usersPage/userDetail/UserDetail";
 const DashboardPage = () => {
-  const { showHome } = useContext(UserContext);
+  const { showHome, showRepos, showInfo } = useContext(UserContext);
   return (
     <DivDashboardAll>
-      {showHome ? (
-        <DivAllHome>
-          <DivHome>
-            <img className="CatGif" src={catgif} alt="" />
-            <img className="PcGif" src={pcgif} alt="" />
-          </DivHome>
-          <h3 className="FontOld Title2">Bem Vindo!</h3>
-        </DivAllHome>
+      {showRepos ? (
+        <UserRepo />
       ) : (
-        <ListOfUsers />
+        <>
+          {showInfo ? (
+            <UserDetail />
+          ) : (
+            <>
+              {showHome ? (
+                <DivAllHome>
+                  <DivHome>
+                    <img className="CatGif" src={catgif} alt="" />
+                    <img className="PcGif" src={pcgif} alt="" />
+                  </DivHome>
+                  <h3 className="FontOld Title2">Bem Vindo!</h3>
+                </DivAllHome>
+              ) : (
+                <ListOfUsers />
+              )}
+            </>
+          )}
+        </>
       )}
     </DivDashboardAll>
   );

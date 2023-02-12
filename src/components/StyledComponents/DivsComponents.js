@@ -45,3 +45,21 @@ export const DivHome = styled.div`
   justify-content: center;
   padding: 10px;
 `;
+/////////////////////////////
+//CARD USER///
+export const DivCardUser = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  padding-left: 20px;
+  gap: 5px;
+  text-align: left;
+`;
+export const DivInfoRepo = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 10px;
+  gap: 15px;
+`;
