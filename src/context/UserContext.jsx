@@ -4,14 +4,14 @@ import React from "react";
 
 export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
-  const [listUsers, setListUsers] = useState([]);
-  const [listUserRepos, setListUserRepos] = useState([]);
   const [users, setUsers] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showHome, setShowHome] = useState(true);
   const [showRepo, setShowRepo] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const [userBox, setUserBox] = useState([]);
+  const [showUsers, setShowUsers] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedRepo, setSelectedRepo] = useState(null);
   const baseUrl = "http://127.0.0.1:8000/api/";
 
   useEffect(() => {
@@ -37,10 +37,6 @@ export const UserProvider = ({ children }) => {
       value={{
         users,
         setUsers,
-        listUsers,
-        setListUsers,
-        listUserRepos,
-        setListUserRepos,
         baseUrl,
         loading,
         setLoading,
@@ -50,8 +46,12 @@ export const UserProvider = ({ children }) => {
         setShowInfo,
         showRepo,
         setShowRepo,
-        userBox,
-        setUserBox,
+        selectedUser,
+        setSelectedUser,
+        showUsers,
+        setShowUsers,
+        selectedRepo,
+        setSelectedRepo,
       }}
     >
       {children}

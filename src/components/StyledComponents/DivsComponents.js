@@ -53,13 +53,32 @@ export const DivCardUser = styled.div`
   justify-content: center;
   padding: 10px;
   padding-left: 20px;
-  gap: 5px;
+  gap: 10px;
   text-align: left;
 `;
 export const DivInfoRepo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: left;
+  padding: 10px;
+  gap: 15px;
+`;
+/////////////////////////////
+////CARD REPOS///////
+export const DivUserRepo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  padding-left: 20px;
+  gap: 10px;
+  text-align: left;
+  border-radius: 10px;
+  background-color: var(--purpleDull);
+`;
+export const UlRepos = styled.ul`
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   gap: 15px;
 `;

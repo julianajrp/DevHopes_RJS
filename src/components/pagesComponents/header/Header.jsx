@@ -9,13 +9,20 @@ import {
   DivButtons,
 } from "../../StyledComponents/DivsComponents";
 const Header = () => {
-  const { setShowHome } = useContext(UserContext);
+  const { setShowHome, setShowInfo, setShowRepo, setShowUsers } =
+    useContext(UserContext);
 
   function showingHomePage() {
-    setShowHome(false);
+    setShowHome(true);
+    setShowUsers(false);
+    setShowInfo(false);
+    setShowRepo(false);
   }
   function showingUsersPage() {
-    setShowHome(true);
+    setShowInfo(false);
+    setShowRepo(false);
+    setShowHome(false);
+    setShowUsers(true);
   }
   return (
     <DivHeader>
@@ -24,10 +31,10 @@ const Header = () => {
         <img className="ImgLogo" src={purple_logo} alt="" />
       </DivTitleLogo>
       <DivButtons>
-        <BtnHeader className="FontOld" onClick={showingHomePage}>
+        <BtnHeader className="FontOld" onClick={showingUsersPage}>
           USERS
         </BtnHeader>
-        <BtnHeader className="FontOld" onClick={showingUsersPage}>
+        <BtnHeader className="FontOld" onClick={showingHomePage}>
           HOME
         </BtnHeader>
       </DivButtons>

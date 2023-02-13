@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5 ,h6, p, span, li{
 .Title3{
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 15px;
 }
 .Headline{
     font-style: normal;
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5 ,h6, p, span, li{
 .HeadlineItalic{
     font-style: italic;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 13px;
 }
 .clicable{
     cursor: pointer;

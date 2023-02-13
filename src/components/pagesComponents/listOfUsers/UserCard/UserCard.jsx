@@ -6,22 +6,40 @@ import {
 import { useContext } from "react";
 import { UserContext } from "../../../../context/UserContext";
 const UserCard = ({ user }) => {
-  const { setShowInfo, setShowRepo } = useContext(UserContext);
-  const showInfoSwitch = () => {
+  const {
+    setShowInfo,
+    setShowRepo,
+    setShowHome,
+    setShowUsers,
+    setSelectedUser,
+    selectedUser,
+  } = useContext(UserContext);
+  const handleClick = (user) => {
+    console.log(selectedUser, "before");
+    setSelectedUser(user);
+    console.log(selectedUser, "after");
+  };
+  function check() {
+    console.log(selectedUser);
+  }
+
+  function showInfoSwitch() {
+    setShowUsers(false);
+    setShowHome(false);
+    setShowRepo(false);
+    handleClick(user);
+    check();
     setShowInfo(true);
-  };
-  const showRepoSwitch = () => {
+  }
+  function showRepoSwitch() {
+    setShowUsers(false);
+    setShowHome(false);
+    setShowInfo(false);
     setShowRepo(true);
-  };
-  // const puttingUserInBox = (userOnClick) => {
-  //   const verify = user.findIndex((users) => users.id === userOnClick.id);
-  //   if (verify !== 0) {
-  //     console.log("erroooooooo");
-  //   } else {
-  //     setUserBox([...userBox, userOnClick]);
-  //     console.log(userBox);
-  //   }
-  // };
+    handleClick(user);
+    check();
+  }
+
   return (
     <DivCardUser>
       <h3 className="FontOld">{user.real_name}</h3>
@@ -29,15 +47,11 @@ const UserCard = ({ user }) => {
       <DivInfoRepo>
         <p
           className="clicable FontOld HeadlineItalic Purple"
-          onClick={showInfoSwitch}
+          onClick={() => {
+            showInfoSwitch();
+          }}
         >
           info
-        </p>
-        <p
-          className="clicable FontOld HeadlineItalic Purple"
-          onClick={showRepoSwitch}
-        >
-          repos
         </p>
       </DivInfoRepo>
     </DivCardUser>

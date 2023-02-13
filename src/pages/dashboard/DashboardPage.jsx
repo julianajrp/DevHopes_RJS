@@ -9,37 +9,42 @@ import {
   DivHome,
   DivAllHome,
 } from "../../components/StyledComponents/DivsComponents";
-import UserRepo from "../usersPage/userRepo/UserRepo";
-import UserDetail from "../usersPage/userDetail/UserDetail";
+import UserRepo from "../../components/pagesComponents/UserDetail/UserRepo";
+import UserDetail from "../../components/pagesComponents/UserDetail/UserDetail";
 const DashboardPage = () => {
-  const { showHome, showRepos, showInfo } = useContext(UserContext);
-  return (
-    <DivDashboardAll>
-      {showRepos ? (
+  const { showHome, showRepos, showInfo, showUsers } = useContext(UserContext);
+
+  if (showHome && !showUsers && !showRepos && !showInfo) {
+    return (
+      <DivDashboardAll>
+        <DivAllHome>
+          <DivHome>
+            <img className="CatGif" src={catgif} alt="" />
+            <img className="PcGif" src={pcgif} alt="" />
+          </DivHome>
+          <h3 className="FontOld Title2">Bem Vindo!</h3>
+        </DivAllHome>
+      </DivDashboardAll>
+    );
+  } else if (showUsers && !showHome && !showRepos && !showInfo) {
+    return (
+      <DivDashboardAll>
+        <ListOfUsers />
+      </DivDashboardAll>
+    );
+  } else if (showRepos && !showHome && !showUsers && !showInfo) {
+    return (
+      <DivDashboardAll>
         <UserRepo />
-      ) : (
-        <>
-          {showInfo ? (
-            <UserDetail />
-          ) : (
-            <>
-              {showHome ? (
-                <DivAllHome>
-                  <DivHome>
-                    <img className="CatGif" src={catgif} alt="" />
-                    <img className="PcGif" src={pcgif} alt="" />
-                  </DivHome>
-                  <h3 className="FontOld Title2">Bem Vindo!</h3>
-                </DivAllHome>
-              ) : (
-                <ListOfUsers />
-              )}
-            </>
-          )}
-        </>
-      )}
-    </DivDashboardAll>
-  );
+      </DivDashboardAll>
+    );
+  } else if (showInfo && !showHome && !showRepos && !showUsers) {
+    return (
+      <DivDashboardAll>
+        <UserDetail />
+      </DivDashboardAll>
+    );
+  }
 };
 
 export default DashboardPage;
